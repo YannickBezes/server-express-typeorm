@@ -1,17 +1,14 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import { Pets } from './entity/Pets';
+import {SnakeNamingStrategy} from 'typeorm-naming-strategies';
 
 export const AppDataSource = new DataSource({
-  type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'test',
-  password: 'test',
-  database: 'test',
+  type: 'sqlite',
+  database: 'database.db',
   synchronize: true,
   logging: false,
-  entities: [Pets],
-  migrations: [],
-  subscribers: [],
+  entities: [ `${__dirname  }**/entity/*.entity{.ts,.js}`],
+  migrations: ['migration/*.migration{.ts.js}'],
+  namingStrategy: new SnakeNamingStrategy(),
+  subscribers: [], // Add listeners here https://typeorm.io/listeners-and-subscribers#
 });
