@@ -18,6 +18,10 @@ class CategoryService {
   getQuestions(category_id: string): Promise<Question[]> {
     return CategoryRepository.getQuestionByCategory(category_id);
   }
+
+  create(category: Category): Promise<Category> {
+    return CategoryRepository.addCategory(category);
+  }
 }
 
 export default new CategoryService();

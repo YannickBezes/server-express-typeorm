@@ -25,6 +25,10 @@ const CategoryRepository = AppDataSource.getRepository(Category).extend({
       .relation(Category, 'questions')
       .of(category_id)
       .loadMany();
+  },
+
+  async addCategory(category: Category): Promise<Category> {
+    return this.save(category);
   }
 });
 
