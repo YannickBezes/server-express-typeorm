@@ -1,10 +1,10 @@
 import cors from 'cors';
 import express from 'express';
 import { config } from '~/config';
-import { PetsController } from '~/resources/pets/pets.controller';
 import ExceptionsHandler from '~/middlewares/exceptions.handler';
 import UnknownRoutesHandler from '~/middlewares/unknown-routes.handler';
 import {AppDataSource} from './data-source';
+import CategoryController from '~/resources/category/category.controller';
 
 const app = express();
 app.use(express.json());
@@ -13,7 +13,7 @@ app.use(cors());
 /**
  * All CRUD routes for pets are prefixed by `/pets`
  */
-app.use('/pets', PetsController);
+app.use('/category', CategoryController);
 
 /**
  * For all undefined routes we return an error

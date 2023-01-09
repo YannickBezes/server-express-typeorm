@@ -10,5 +10,6 @@ export const AppDataSource = new DataSource({
   entities: [ `${__dirname  }**/entity/*.entity{.ts,.js}`],
   migrations: ['migration/*.migration{.ts.js}'],
   namingStrategy: new SnakeNamingStrategy(),
+  cache: true,
   subscribers: [], // Add listeners here https://typeorm.io/listeners-and-subscribers#
 });

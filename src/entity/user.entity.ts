@@ -7,7 +7,7 @@ export default class User {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ type: 'text', nullable: false })
+  @Column({ type: 'text', nullable: false, select: false })
   password: string;
 
   @Column({ type: 'text', nullable: false })
