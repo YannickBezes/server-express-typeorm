@@ -2,8 +2,8 @@ import cors from 'cors';
 import express from 'express';
 import { config } from '~/config';
 import { PetsController } from '~/resources/pets/pets.controller';
-import { ExceptionsHandler } from '~/middlewares/exceptions.handler';
-import { UnknownRoutesHandler } from '~/middlewares/unknown-routes.handler';
+import ExceptionsHandler from '~/middlewares/exceptions.handler';
+import UnknownRoutesHandler from '~/middlewares/unknown-routes.handler';
 import {AppDataSource} from './data-source';
 
 const app = express();

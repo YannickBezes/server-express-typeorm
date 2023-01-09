@@ -10,7 +10,7 @@ import {NextFunction, Request, Response} from 'express';
  *
  * @see https://expressjs.com/en/guide/error-handling.html
  */
-export const ExceptionsHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+export default (err: any, req: Request, res: Response, next: NextFunction) => {
   /**
    * Default error handler
    */

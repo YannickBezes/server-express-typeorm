@@ -1,9 +1,9 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
-import {Answer} from '~/entity/answer.entity';
+import Answer from '~/entity/answer.entity';
 
 
 @Entity()
-export class User {
+export default class User {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
